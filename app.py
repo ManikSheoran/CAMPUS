@@ -38,9 +38,9 @@ def get_shortest_path(predecessors, start, end):
 campus = {
     '1st Gate': [(93, 'Rabindra Statue'), (138, 'Guest House')],
     'Rabindra Statue': [(93, '1st Gate'), (66, 'Guest House'), (80, 'Amenities')],
-    'Guest House': [(138, '1st Gate'), (66, 'Rabindra Statue'), (66, 'I Hall'), (92, 'Graveyard')],
+    'Guest House': [(138, '1st Gate'), (66, 'Rabindra Statue'), (66, 'I Hall'), (92, 'Graveyard'), (82, 'Netaji Bhavan')],
     'Amenities': [(80, 'Rabindra Statue'), (76, 'Richardson Hall'), (67, 'Netaji Bhavan')],
-    'Netaji Bhavan': [(67, 'Amenities'), (73, 'Main Building')],
+    'Netaji Bhavan': [(67, 'Amenities'), (73, 'Main Building'), (82, 'Guest House')],
     'I Hall': [(66, 'Guest House'), (130, 'Main Building'), (44, 'I Canteen')],
     'Main Building': [(130, 'I Hall'), (100, 'Library'), (73, 'Netaji Bhavan')],
     'Library': [(100, 'Main Building'), (97, 'H14'), (103, 'D Quarters')],
