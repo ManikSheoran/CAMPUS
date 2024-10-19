@@ -1,0 +1,102 @@
+/* Updated style.css */
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+  background: linear-gradient(135deg, #003366 30%, #f7b300 70%);
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  border-top: 8px solid #003366; /* Navy IIEST color for the top border */
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #003366; /* IIEST navy blue */
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+form label {
+  display: block;
+  text-align: left;
+  color: #003366;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+select:focus,
+input:focus {
+  border-color: #f7b300; /* IIEST gold */
+  outline: none;
+}
+
+button {
+  background-color: #003366; /* IIEST navy blue */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #f7b300; /* IIEST gold */
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+h3 {
+  margin-top: 20px;
+  color: #f7b300; /* IIEST gold */
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 5px 0;
+  color: #003366; /* IIEST navy */
+}
+
+@media (max-width: 450px) {
+  .container {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    padding: 10px;
+  }
+}

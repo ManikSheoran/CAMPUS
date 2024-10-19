@@ -4,7 +4,6 @@ from waitress import serve
 
 app = Flask(__name__)
 
-# Dijkstra's algorithm
 def dijkstra(graph, s):
     queue = []
     distances = {node: float('inf') for node in graph}
@@ -26,7 +25,6 @@ def dijkstra(graph, s):
 
     return distances, predecessors
 
-# Helper to extract the shortest path
 def get_shortest_path(predecessors, start, end):
     path = []
     current = end
@@ -34,6 +32,7 @@ def get_shortest_path(predecessors, start, end):
         path.insert(0, current)
         current = predecessors[current]
     return path
+
 
 campus = {
     '1st Gate': [(93, 'Rabindra Statue'), (138, 'Guest House')],
@@ -84,14 +83,15 @@ def index():
         source = request.form.get('source')
         destination = request.form.get('destination')
 
-        # Run Dijkstra's algorithm
         distances, predecessors = dijkstra(campus, source)
         path = get_shortest_path(predecessors, source, destination)
         
-        # Render the result back to the user
-        return render_template('index.html', path=' -> '.join(path), source=source, destination=destination)
+        return render_template('index.html', path='  → '.join(path), source=source, destination=destination)
     
     return render_template('index.html')
 
 if __name__ == '__main__':
     serve(app, host='0.0.0.0', port=8080)
+
+# if __name__ == '__main__':
+#     app.run(debug=True)
