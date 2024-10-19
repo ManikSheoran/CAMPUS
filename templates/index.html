@@ -7,43 +7,90 @@
     <title>Campus Shortest Path Finder</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: #333;
         }
 
         .container {
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
             width: 400px;
             text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
         }
 
         input,
         select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
             font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #3498db;
+            outline: none;
         }
 
         button {
             background-color: #28a745;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 20px;
             font-size: 1rem;
             cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         button:hover {
             background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #e74c3c;
+        }
+
+        p {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 450px) {
+            .container {
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -147,8 +194,12 @@
 
         {% if path %}
         <h3>Shortest Path</h3>
-        <p><strong>{{ source }}</strong> to <strong>{{ destination }}</strong>:</p>
-        <p>{{ path }}</p>
+        <p><strong>
+                {{ source }}</strong> to <strong>
+                {{ destination }}</strong>:</p>
+        <p>
+            {{ path }}
+        </p>
         {% endif %}
     </div>
 </body>
