@@ -40,9 +40,9 @@ campus = {
     'Rabindra Statue': [(93, '1st Gate'), (66, 'Guest House'), (80, 'Amenities')],
     'Guest House': [(138, '1st Gate'), (66, 'Rabindra Statue'), (66, 'I Hall'), (92, 'Graveyard')],
     'Amenities': [(80, 'Rabindra Statue'), (76, 'Richardson Hall'), (67, 'Netaji Bhavan')],
-    'Netaji Bhavan': [(67, 'Amenities')],
+    'Netaji Bhavan': [(67, 'Amenities'), (73, 'Main Building')],
     'I Hall': [(66, 'Guest House'), (130, 'Main Building'), (44, 'I Canteen')],
-    'Main Building': [(130, 'I Hall'), (100, 'Library')],
+    'Main Building': [(130, 'I Hall'), (100, 'Library'), (73, 'Netaji Bhavan')],
     'Library': [(100, 'Main Building'), (97, 'H14'), (103, 'D Quarters')],
     'I Canteen': [(44, 'I Hall'), (122, 'SNT')],
     'SNT': [(122, 'I Canteen'), (66, 'Cafe Inn'), (90, 'BE Model School'), (210, 'MN Dastur')],
@@ -95,4 +95,3 @@ def index():
 
 if __name__ == '__main__':
     serve(app, host='0.0.0.0', port=8080)
-
