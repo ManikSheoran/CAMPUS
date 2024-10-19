@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Shortest Path Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Campus Shortest Path Finder</h2>
+        <form method="POST">
+            <label for="source">Source:</label>
+            <select name="source" id="source" required>
+                <option value="" disabled selected>Select a starting point</option>
+                <option value="1st Gate">1st Gate</option>
+                <option value="Rabindra Statue">Rabindra Statue</option>
+                <option value="Guest House">Guest House</option>
+                <option value="Amenities">Amenities</option>
+                <option value="Netaji Bhavan">Netaji Bhavan</option>
+                <option value="I Hall">I Hall</option>
+                <option value="Main Building">Main Building</option>
+                <option value="Library">Library</option>
+                <option value="I Canteen">I Canteen</option>
+                <option value="SNT">SNT</option>
+                <option value="Cafe Inn">Cafe Inn</option>
+                <option value="H14">H14</option>
+                <option value="Sen Hall">Sen Hall</option>
+                <option value="H15">H15</option>
+                <option value="H13">H13</option>
+                <option value="Sengupta Hall">Sengupta Hall</option>
+                <option value="H16">H16</option>
+                <option value="Macdonald Hall">Macdonald Hall</option>
+                <option value="Richardson Hall">Richardson Hall</option>
+                <option value="Pandya Hall">Pandya Hall</option>
+                <option value="Graveyard">Graveyard</option>
+                <option value="Clock Tower">Clock Tower</option>
+                <option value="Hospital">Hospital</option>
+                <option value="Wolfenden Hall">Wolfenden Hall</option>
+                <option value="Nivedita Hall">Nivedita Hall</option>
+                <option value="Oval">Oval</option>
+                <option value="Madhusudan Bhavan">Madhusudan Bhavan</option>
+                <option value="BE Model School">BE Model School</option>
+                <option value="Gymnasium">Gymnasium</option>
+                <option value="H10">H10</option>
+                <option value="H11">H11</option>
+                <option value="H7">H7</option>
+                <option value="H8">H8</option>
+                <option value="H9">H9</option>
+                <option value="Neem Lake">Neem Lake</option>
+                <option value="LT Williams Hall">LT Williams Hall</option>
+                <option value="3rd Gate">3rd Gate</option>
+                <option value="2nd Gate">2nd Gate</option>
+                <option value="D Quarters">D Quarters</option>
+                <option value="MN Dastur">MN Dastur</option>
+            </select>
+
+            <label for="destination">Destination:</label>
+            <select name="destination" id="destination" required>
+                <option value="" disabled selected>Select a destination</option>
+                <option value="1st Gate">1st Gate</option>
+                <option value="Rabindra Statue">Rabindra Statue</option>
+                <option value="Guest House">Guest House</option>
+                <option value="Amenities">Amenities</option>
+                <option value="Netaji Bhavan">Netaji Bhavan</option>
+                <option value="I Hall">I Hall</option>
+                <option value="Main Building">Main Building</option>
+                <option value="Library">Library</option>
+                <option value="I Canteen">I Canteen</option>
+                <option value="SNT">SNT</option>
+                <option value="Cafe Inn">Cafe Inn</option>
+                <option value="H14">H14</option>
+                <option value="Sen Hall">Sen Hall</option>
+                <option value="H15">H15</option>
+                <option value="H13">H13</option>
+                <option value="Sengupta Hall">Sengupta Hall</option>
+                <option value="H16">H16</option>
+                <option value="Macdonald Hall">Macdonald Hall</option>
+                <option value="Richardson Hall">Richardson Hall</option>
+                <option value="Pandya Hall">Pandya Hall</option>
+                <option value="Graveyard">Graveyard</option>
+                <option value="Clock Tower">Clock Tower</option>
+                <option value="Hospital">Hospital</option>
+                <option value="Wolfenden Hall">Wolfenden Hall</option>
+                <option value="Nivedita Hall">Nivedita Hall</option>
+                <option value="Oval">Oval</option>
+                <option value="Madhusudan Bhavan">Madhusudan Bhavan</option>
+                <option value="BE Model School">BE Model School</option>
+                <option value="Gymnasium">Gymnasium</option>
+                <option value="H10">H10</option>
+                <option value="H11">H11</option>
+                <option value="H7">H7</option>
+                <option value="H8">H8</option>
+                <option value="H9">H9</option>
+                <option value="Neem Lake">Neem Lake</option>
+                <option value="LT Williams Hall">LT Williams Hall</option>
+                <option value="3rd Gate">3rd Gate</option>
+                <option value="2nd Gate">2nd Gate</option>
+                <option value="D Quarters">D Quarters</option>
+                <option value="MN Dastur">MN Dastur</option>
+            </select>
+
+            <button type="submit">Find Shortest Path</button>
+        </form>
+
+        {% if path %}
+        <h3>Shortest Path</h3>
+        <p><strong>{{ source }}</strong> to <strong>{{ destination }}</strong>:</p>
+        <p>{{ path }}</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
