@@ -10,8 +10,12 @@ body {
   align-items: center;
   height: 100vh;
   color: #333;
-  background: linear-gradient(135deg, #003366 30%, #f7b300 70%);
+  background: 
+    url('https://i.ibb.co/yF9D4pP/Screenshot-2024-10-20-105508.png');
+  background-size: cover;
+  background-position: center;
 }
+
 
 .container {
   background-color: #ffffff;
